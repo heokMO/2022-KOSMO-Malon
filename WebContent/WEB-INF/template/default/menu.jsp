@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <ul>
-	<li><a href="/">Home</a></li>
+	<li><a href="/springmvc_0128/">Home</a></li>
 	<c:choose>
 		<c:when test="${sessionScope.sessionID == null}">
 			<li><a href="">로그인</a></li>
@@ -15,6 +15,8 @@
 	</c:choose>
 	<li><a href="">게시판</a></li>
 	<li><a href="upform">파일데모</a></li>
+	<li><a href="survey">설문조사</a></li>
+	<li><a href="survey/result">설문결과</a></li>
 	<c:if test="${sessionScope.sessionID != null}">
 	<li>${sessionScope.sessionName}님 반갑습니다</li>
 	</c:if>
