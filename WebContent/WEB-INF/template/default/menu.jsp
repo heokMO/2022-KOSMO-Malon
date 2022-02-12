@@ -16,7 +16,7 @@
 	<li><a href="">게시판</a></li>
 	<li><a href="upform">파일데모</a></li>
 	<li><a href="survey">설문조사</a></li>
-	<li><a href="survey/result">설문결과</a></li>
+	<li><a href="result">설문결과</a></li>
 	<c:if test="${sessionScope.sessionID != null}">
 	<li>${sessionScope.sessionName}님 반갑습니다</li>
 	</c:if>
