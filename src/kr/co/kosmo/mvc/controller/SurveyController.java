@@ -15,9 +15,6 @@ public class SurveyController {
 	@Autowired
 	private SurveyDaoInter surveyDaoInter;
 	
-	@Autowired
-	private AnswerVO vo;
-	
 	@RequestMapping(value = "/survey")
 	public String survey(Model m) {
 		SurveyVO vo = surveyDaoInter.getSuvey(1);
@@ -26,17 +23,16 @@ public class SurveyController {
 		return "survey/surveyform";
 	}
 	
-	@PostMapping(value = "/submit")
-	public String submit(Model m, SurveyVO svo) {
-		vo.setSurvey_idx(svo.getSurvey_idx());
-		surveyDaoInter.submitSuvey(vo);
-		
-		return "redirect:result";
-	}
+
+	  @PostMapping(value = "/submit") 
+	  public String submit(Model m, AnswerVO vo) {
+		  surveyDaoInter.submitSuvey(vo);
+		  return "redirect:result"; 
+	  }
+	 
 	
 	@RequestMapping(value = "/result")
 	public String result(Model m) {
-
 		return "survey/result";
 	}
 	
