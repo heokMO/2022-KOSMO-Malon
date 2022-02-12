@@ -44,9 +44,9 @@
 		    exportEnabled: true,
 		    title:{
 		        text: ""
-		    }
+		    };
 		    data: {
-		       columns: rootlistv,
+		       	columns: rootlistv,
 		        type: 'pie',
 		        onclick: function (d, i) { console.log("onclick", d, i); },
 		        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
