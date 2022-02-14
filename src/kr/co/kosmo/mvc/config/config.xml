@@ -4,10 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="kr.co.kosmo.mvc.dto.UploadDemoVO" alias="upvo"/>
-		<typeAlias type="kr.co.kosmo.mvc.dto.SurveyVO" alias="surveyVO"/>
-		<typeAlias type="kr.co.kosmo.mvc.dto.AnswerVO" alias="answerVO"/>
-		<typeAlias type="kr.co.kosmo.mvc.dto.SurveyResultVO" alias="surveyResultVO"/>
-		
-	</typeAliases>
+<!-- 		<typeAlias type="kr.co.kosmo.mvc.dto.UploadDemoVO" alias="upvo"/>
+ -->	</typeAliases>
 </configuration>
