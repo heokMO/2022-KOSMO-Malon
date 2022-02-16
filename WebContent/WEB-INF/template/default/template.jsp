@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<link rel="stylesheet" href="resources/css/style.css" type="text/css"/>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
