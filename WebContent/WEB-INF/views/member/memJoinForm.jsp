@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="resources/CSS/new_main.css">
 <div id="wrapper">
-	<form id="joinfrm">
+	<form id="joinfrm" method="post">
 		<div id="content">
 			<div>
 				<h3 class="join_title">
@@ -35,7 +35,7 @@
             </div>
 
             <div>
-                <h3 class="join_title"><label for="mem_nick">이름</label></h3>
+                <h3 class="join_title"><label for="mem_nick">닉네임</label></h3>
                 <span class="box int_name">
                     <input type="text" name="mem_nick" id="mem_nick" class="int" maxlength="20" placeholder="닉네임을 입력해주세요.">
                 </span>
@@ -45,14 +45,14 @@
             <div>
                 <h3 class="join_title"><label for="mem_email">본인확인 이메일</label></h3>
                 <span class="box int_email">
-                    <input type="text" name="mem_email" id="mem_email" class="int" maxlength="100" placeholder="이메일을 입력해주세요.">
+                    <input type="email" name="mem_email" id="mem_email" class="int" maxlength="100" placeholder="이메일을 입력해주세요.">
                 </span>
                 <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
             </div>
 
             <div class="btn_area">
 	            <button type="submit" id="btnJoin">
-	                <span>가입 계속</span>
+	                <span>회원가입</span>
 	            </button>
             </div>
 	</form>
@@ -65,6 +65,7 @@
 		okId = false;
 		idcheck = false;
 		okPwd = false;
+		confirmPwd = false;
 		oknick = false;
 		okemail = false;
 		joinPermission = false;
@@ -92,7 +93,6 @@
 	    	var joinPermission = joinOk();
 	    	if (joinPermission){
 	    		$('#joinfrm').attr("action","join");
-				frmAction.attr("method","post")
 	    		$('#joinfrm').submit();
 	    	}
 	    	
