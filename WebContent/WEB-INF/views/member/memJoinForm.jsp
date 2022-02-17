@@ -1,42 +1,103 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<fieldset>
-	<legend>ȸ������</legend>
-	<form action="join" method="post">
-		<div id="target">
-			���̵� :  <input type="text" id="mem_acc_id" name="mem_acc_id">
-			<input type="button" value="�ߺ�Ȯ��" id="chkBtn"> <br>
-			<span id="checkMsg"></span> <br>
-			��й�ȣ : <input type="password" id="mem_pwd" name="mem_pwd"><br>
-			�г��� :  <input type="text" id="mem_nick" name="mem_nick" ><br>
-			�̸��� :  <input type="email" id="mem_email" name="mem_email"><br>
-		</div>
-		<p>
-			<input type="submit" value="ȸ������ �ϱ� ">
-		</p>
-	</form>
-</fieldset>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="resources/CSS/new_main.css">
+<div id="wrapper">
+	<form id="joinfrm">
+		<div id="content">
+			<div>
+				<h3 class="join_title">
+					<label for="mem_acc_id">아이디</label>
+				</h3>
+				<span class="box int_id">
+                	<input type="text" name="mem_acc_id" id="mem_acc_id" class="int" maxlength="20" placeholder="아이디를 입력해주세요.">
+                	<input type="button" value="중복확인" id="chkBtn"> <br>
+                </span>
+                <span class="error_next_box" id="checkMsg"></span>
+			</div>
 
-<script type="text/javascript" src="resources/js/idchk.js"></script>
+            <div>
+                <h3 class="join_title"><label for="mem_pwd">비밀번호</label></h3>
+                <span class="box int_pass">
+                    <input type="password" name="mem_pwd" id="mem_pwd" class="int" maxlength="20" placeholder="비밀번호를 입력해주세요.">
+                    <span id="alertTxt">사용불가</span>
+                    <img src="resources/images/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
+                </span>
+                <span class="error_next_box" id="checkMsg"></span>
+            </div>
+
+            <div>
+                <h3 class="join_title"><label for="mem_pwd2">비밀번호 재확인</label></h3>
+                <span class="box int_pass_check">
+                    <input type="password" id="mem_pwd2" class="int" maxlength="20" placeholder="비밀번호를 다시 한 번 입력해주세요.">
+                    <img src="resources/images/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
+                </span>
+                <span class="error_next_box" id="checkMsg"></span>
+            </div>
+
+            <div>
+                <h3 class="join_title"><label for="mem_nick">이름</label></h3>
+                <span class="box int_name">
+                    <input type="text" name="mem_nick" id="mem_nick" class="int" maxlength="20" placeholder="닉네임을 입력해주세요.">
+                </span>
+                <span class="error_next_box"></span>
+            </div>
+
+            <div>
+                <h3 class="join_title"><label for="mem_email">본인확인 이메일</label></h3>
+                <span class="box int_email">
+                    <input type="text" name="mem_email" id="mem_email" class="int" maxlength="100" placeholder="이메일을 입력해주세요.">
+                </span>
+                <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
+            </div>
+
+            <div class="btn_area">
+	            <button type="submit" id="btnJoin">
+	                <span>가입 계속</span>
+	            </button>
+            </div>
+	</form>
+</div>
+
+<script type="text/javascript" src="resources/js/idchk.js" charset="UTF-8"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
-	
-	
-	$(function(){
+	document.addEventListener("DOMContentLoaded", function(){
+		okId = false;
+		idcheck = false;
+		okPwd = false;
+		oknick = false;
+		okemail = false;
+		joinPermission = false;
 		
 	    $('#chkBtn').click(function(){
 	    	memberService.checkId($('#mem_acc_id').val(),
 	    		function(result){
-		            if(result == '0'){
-		                $('#checkMsg').html('��� ������ ���̵� �Դϴ�.')
-		                $('#checkMsg').css('color','blue');
-		            }else{
-		                $('#checkMsg').html('�̹� ������� ���̵� �Դϴ�.')
-		                $('#checkMsg').css('color','red');
-		                }
+	    			if(okId == true){
+			            if(result == '0'){
+			                $('#checkMsg').html('사용 가능한 아이디 입니다.');
+			                $('#checkMsg').css('color','blue');
+			                idcheck = true;
+			            }else{
+			                $('#checkMsg').html('이미 사용중인 아이디 입니다.');
+			                $('#checkMsg').css('color','red');
+			            }	    				
+	    			}
 	    		}
 	    	);
 	    })
+	    
+	    $('#btnJoin').click(function(e){
+	    	e.stopPropagation();
+	
+	    	var joinPermission = joinOk();
+	    	if (joinPermission){
+	    		$('#joinfrm').attr("action","join");
+				frmAction.attr("method","post")
+	    		$('#joinfrm').submit();
+	    	}
+	    	
+	    })
+	
 	});
 </script>
 

@@ -1,24 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <ul>
 	<li><a href="/springmvc_0128/">Home</a></li>
 	<c:choose>
 		<c:when test="${sessionScope.sessionID == null}">
-			<li><a href="">·Î±×ÀÎ</a></li>
-			<li><a href="joinForm">È¸¿ø°¡ÀÔ</a></li>
+			<li><a href="">ë¡œê·¸ì¸</a></li>
+			<li><a href="joinForm">íšŒì›ê°€ìž…</a></li>
 		</c:when>
 			<c:when test="${sessionScope.sessionID != null}">
-			<li><a href="">·Î±×¾Æ¿ô</a></li>
-			<li><a href="">¸¶ÀÌÆäÀÌÁö</a></li>
+			<li><a href="">ë¡œê·¸ì•„ì›ƒ</a></li>
+			<li><a href="">ë§ˆì´íŽ˜ì´ì§€</a></li>
 		</c:when>
 	</c:choose>
-	<li><a href="">°Ô½ÃÆÇ</a></li>
-	<li><a href="upform">ÆÄÀÏµ¥¸ð</a></li>
-	<li><a href="survey">¼³¹®Á¶»ç</a></li>
-	<li><a href="result">¼³¹®°á°ú</a></li>
+	<li><a href="">ê²Œì‹œíŒ</a></li>
+	<li><a href="upform">íŒŒì¼ë°ëª¨</a></li>
+	<li><a href="survey">ì„¤ë¬¸ì¡°ì‚¬</a></li>
+	<li><a href="result">ì„¤ë¬¸ê²°ê³¼</a></li>
 	<c:if test="${sessionScope.sessionID != null}">
-	<li>${sessionScope.sessionName}´Ô ¹Ý°©½À´Ï´Ù</li>
+	<li>${sessionScope.sessionName}ë‹˜ ë°˜ê°‘ìŠµë‹ˆë‹¤</li>
 	</c:if>
 	
 </ul>

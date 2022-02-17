@@ -32,7 +32,6 @@ public class MemController {
 	@GetMapping(value="/memIdchk")
 	@ResponseBody
 	public int memIdchk(Model m,@Param("mem_acc_id") String mem_acc_id) {
-		String a = mem_acc_id;
 		int result = memService.memIdchk(mem_acc_id);
 		return result;
 	}
