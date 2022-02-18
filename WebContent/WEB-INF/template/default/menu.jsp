@@ -6,7 +6,7 @@
 	<c:choose>
 		<c:when test="${sessionScope.sessionID == null}">
 			<li><a href="">로그인</a></li>
-			<li><a href="joinForm">회원가입</a></li>
+			<li><a href="member/joinForm">회원가입</a></li>
 		</c:when>
 			<c:when test="${sessionScope.sessionID != null}">
 			<li><a href="">로그아웃</a></li>

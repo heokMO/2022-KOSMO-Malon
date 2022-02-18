@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="resources/CSS/new_main.css">
-<div id="wrapper">
+<!-- <link rel="stylesheet" href="/resources/css/new_main.css">
+ --><div id="wrapper">
 	<form id="joinfrm" method="post">
 		<div id="content">
 			<div>
@@ -55,6 +55,7 @@
 	                <span>회원가입</span>
 	            </button>
             </div>
+      </div>
 	</form>
 </div>
 
@@ -92,7 +93,7 @@
 	
 	    	var joinPermission = joinOk();
 	    	if (joinPermission){
-	    		$('#joinfrm').attr("action","join");
+	    		$('#joinfrm').attr("action","/member/join");
 	    		$('#joinfrm').submit();
 	    	}
 	    	
