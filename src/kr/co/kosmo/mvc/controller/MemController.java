@@ -20,7 +20,7 @@ public class MemController {
 	
 	@RequestMapping(value="joinForm")
 	public String showJoin(Model m) {
-		return "member/memJoinForm";
+		return "memJoinForm";
 	}
 	
 	@RequestMapping(value="join")
@@ -35,5 +35,10 @@ public class MemController {
 	public int memIdchk(Model m,@Param("mem_acc_id") String mem_acc_id) {
 		int result = memService.memIdchk(mem_acc_id);
 		return result;
+	}
+	
+	@RequestMapping(value="login")
+	public String login(Model m) {
+		return "login";
 	}
 }

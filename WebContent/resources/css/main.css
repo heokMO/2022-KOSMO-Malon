@@ -1,5 +1,4 @@
-
-/* 레이아웃 틀 */
+@charset "EUC-KR";
 html {
     height: 100%;
 }
@@ -18,7 +17,7 @@ body {
 }
 #wrapper {
     position: relative;
-    height: 70%;
+    height: 75%;
     margin: 50px;
 }
 
@@ -35,15 +34,21 @@ body {
 	font-size: 50px;
 }
 
-#footer{
-	text-align: center;
-}
-/* 입력폼 */
-
 #logo_img{
-	margin-top: 50px;
-	width: 250px;
-	height: 60px;
+	align-content: center;
+	width: 230px;
+	height: 50px;
+}
+
+#content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 460px;
+}
+
+fieldset {
+	border : none;
 }
 
 input:focus {
@@ -83,41 +88,9 @@ h3 {
 input {
     font-family: 'Arita-dotum-Medium';    
 }
+
 .id_box {
 	display: flex;
-}
-
-.box.int_id {
-	width: 80%;
-    padding-right: 110px;
-}
-
-.box.int_pass {
-    padding-right: 40px;
-}
-
-.box.int_pass_check {
-    padding-right: 40px;
-}
-
-.step_url {
-    /*@naver.com*/
-    position: absolute;
-    top: 16px;
-    right: 13px;
-    font-size: 15px;
-    color: #8e8e8e;
-}
-
-.pswdImg {
-    width: 18px;
-    height: 20px;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    right: 16px;
-    margin-top: -10px;
-    cursor: pointer;
 }
 
 select {
@@ -134,31 +107,12 @@ select {
     font-family: 'Arita-dotum-Medium';
 }
 
-/* 에러메세지 */
-
-.error_next_box {
-    margin-top: 9px;
-    font-size: 12px;
-    color: red;    
-    display: none;
-}
-
-#alertTxt {
-    position: absolute;
-    top: 19px;
-    right: 38px;
-    font-size: 12px;
-    color: red;
-    display: none;
-}
-
-/* 버튼 */
 
 .btn_area {
     margin: 30px 0 91px;
 }
 
-#btnJoin {
+#btnLogin{
     width: 100%;
     padding: 21px 0 17px;
     border: 0;
@@ -170,28 +124,13 @@ select {
     font-family: 'Arita-dotum-Medium';
 }
 
-#btnJoin:hover{
+#btnLogin:hover{
 	background-color: #53928C;
 	color: #fff;
 }
 
-#chkBtn{
-    width: 82px;
-    border: 0;
-    margin-left: 10px;
-    cursor: pointer;
-    color: #4F594F;
-    background-color: #BED7D8;
-    font-size: 15px;
-    font-weight: 400;
-    font-family: 'Arita-dotum-Medium';
-   	height: 51px;
-    
-}
-
-#chkBtn:hover{
-	background-color: #53928C;
-	color: #fff;
+#footer{
+	text-align: center;
 }
 
 @font-face {
@@ -200,19 +139,3 @@ select {
     font-weight: normal;
     font-style: normal;
 }
-
-/*
-@font-face {
-    font-family: 'SBAggroL';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff%27) format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SF_HambakSnow';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*/

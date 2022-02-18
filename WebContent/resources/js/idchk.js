@@ -54,13 +54,13 @@ function checkPw() {
         error[1].style.display = "block";
         
         pwMsg.style.display = "block";
-        pwImg1.src = "resources/images/m_icon_not_use.png";
+        pwImg1.src = "/resources/images/m_icon_not_use.png";
     } else {
         error[1].style.display = "none";
         pwMsg.innerHTML = "안전";
         pwMsg.style.display = "block";
         pwMsg.style.color = "#03c75a";
-        pwImg1.src = "resources/images/m_icon_safe.png";
+        pwImg1.src = "/resources/images/m_icon_safe.png";
         okPwd = true;
     }
 }
@@ -68,11 +68,11 @@ function checkPw() {
 
 function comparePw() {
     if(pw2.value === pw1.value && pw2.value != "") {
-        pwImg2.src = "resources/images/m_icon_check_enable.png";
+        pwImg2.src = "/resources/images/m_icon_check_enable.png";
         error[2].style.display = "none";
         confirmPwd = true;
     } else if(pw2.value !== pw1.value) {
-        pwImg2.src = "resources/images/m_icon_check_disable.png";
+        pwImg2.src = "/resources/images/m_icon_check_disable.png";
         error[2].innerHTML = "비밀번호가 일치하지 않습니다.";
         error[2].style.display = "block";
     } 
@@ -88,7 +88,7 @@ function checkNickName() {
     if(nickName.value === "") {
         error[3].innerHTML = "필수 정보입니다.";
         error[3].style.display = "block";
-    } else if(!namePattern.test(userName.value) || userName.value.indexOf(" ") > -1) {
+    } else if(!namePattern.test(nickName.value) || nickName.value.indexOf(" ") > -1) {
         error[3].innerHTML = "한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)";
         error[3].style.display = "block";
     } else {
@@ -104,9 +104,9 @@ function isEmailCorrect() {
     if(email.value === ""){ 
         error[4].innerHTML = "필수 정보입니다.";
     } else if(!emailPattern.test(email.value)) {
-        error[3].style.display = "block";
+    	error[4].innerHTML = "올바른 형식으로 입력해주세요.";
     } else {
-        error[3].style.display = "none";
+        error[4].style.display = "none";
         okemail = true;
     }
 

@@ -3,14 +3,7 @@
 	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<definition name="memberTemplate" 
-				template="/WEB-INF/template/memebr/template.jsp">
-	</definition>
-	<definition name="member/*" extends="memberTemplate">
-	      <put-attribute name="body" value="/WEB-INF/views/member/{1}.jsp"/>
-	</definition>   
-	
-	<definition name="defaultTemplate" 
+ 	<definition name="defaultTemplate" 
 				template="/WEB-INF/template/default/template.jsp">
 		<put-attribute name="header" 
 					   value="/WEB-INF/template/default/header.jsp"/>
@@ -22,7 +15,5 @@
 	<definition name="*/*" extends="defaultTemplate">
 	      <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>     
-	
-
 </tiles-definitions>    
 

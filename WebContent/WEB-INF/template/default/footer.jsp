@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 
 <div id="header1" class="hd">
-	kosmo100 ...................
+	Copyright MALON Corp. All Rights Reserved.
 </div>
