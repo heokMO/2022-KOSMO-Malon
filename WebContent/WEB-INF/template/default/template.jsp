@@ -6,16 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style type="text/css">
-#blank{
-	height: 300px;
-}
-</style>
+<link rel="stylesheet" href="/resources/css/main.css">
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 	<div id="wrap">
-		<tiles:insertAttribute name="header"/>
+		<div id="hgroup">
+			<tiles:insertAttribute name="header"/>
+		</div>
 		<div id="navigation">
 			<tiles:insertAttribute name="menu"/>
 		</div>

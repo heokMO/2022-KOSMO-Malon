@@ -2,5 +2,5 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>       
     <div id="article">
-		MALON :Most of All List Of New
+		<h1>¾î¼­¿À¼î</h1>
     </div>

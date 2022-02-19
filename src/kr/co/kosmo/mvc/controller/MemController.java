@@ -64,4 +64,10 @@ public class MemController {
 		session.invalidate();
 		return "redirect:/";
 	}
+	
+
+	
+	
 }
+	
+
