@@ -12,7 +12,7 @@
 		<a href="/"><img src="/resources/images/MALON_logo.png" id=logo_img></a>
 	</div>
 	<div id="wrapper">
-			<form id="joinfrm" method="post">
+			<form id="joinfrm" method="post" action="/member/login">
 				<fieldset>
 					<div id="content">					
 						<div>
@@ -29,6 +29,9 @@
 			                    <input type="password" name="mem_pwd" id="mem_pwd" class="int" maxlength="20" placeholder="비밀번호">
 			                </span>
 			            </div>
+			            <span id="error_msg">
+							${msg}
+						</span>
 				       	<div class="btn_area">
 				            <button type="submit" id="btnLogin">
 				                <span>로그인</span>

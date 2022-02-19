@@ -28,6 +28,10 @@ body {
     width: 460px;
 }
 
+#login_form{
+	margin: 300px;
+}
+
 #logo{
 	margin: 50px;
 	text-align: center;
@@ -38,6 +42,12 @@ body {
 	align-content: center;
 	width: 230px;
 	height: 50px;
+}
+
+#error_msg{
+	font-family: 'Arita-dotum-Medium'; 
+	color : #FF0000;
+	padding-top: 15px;
 }
 
 #content {
@@ -131,6 +141,7 @@ select {
 
 #footer{
 	text-align: center;
+	margin-top: 50px;
 }
 
 @font-face {

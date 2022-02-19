@@ -4,7 +4,6 @@
 
 <div id="header1" class="hd">
 	<div id="hgroup">
-		<h1>Spring Test</h1>
-		<h2>survey, Answer_chart</h2>
+		<h1>MALON</h1>
 	</div>
 </div>

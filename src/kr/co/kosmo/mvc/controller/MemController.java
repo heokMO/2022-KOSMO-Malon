@@ -1,5 +1,7 @@
 package kr.co.kosmo.mvc.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,8 +39,29 @@ public class MemController {
 		return result;
 	}
 	
-	@RequestMapping(value="login")
+	@RequestMapping(value="loginPage")
 	public String login(Model m) {
-		return "login";
+		return "loginPage";
+	}
+	
+	@RequestMapping(value="login")
+	public String login(Model m, MemVO vo, HttpSession session) {
+		int cnt = memService.login(vo);
+		String msg;
+		if (cnt == 1) {
+			session.setAttribute("sessionId", vo.getMem_acc_id());
+			session.setAttribute("sessionNick", vo.getMem_nick());
+			return "main/main";
+		} else {
+			msg = "아이디 또는 비밀번호가 다릅니다.";
+			m.addAttribute("msg",msg);
+		}
+		return "loginPage";
+	}
+	
+	@RequestMapping(value="logout")
+	public String logout(Model m, HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
 	}
 }

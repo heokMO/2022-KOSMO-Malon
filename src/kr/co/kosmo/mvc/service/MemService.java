@@ -23,6 +23,12 @@ public class MemService implements MemDAO{
 		return result;
 	}
 
+	@Override
+	public int login(MemVO vo) {
+		int cnt = ss.selectOne("member.login", vo);
+		return cnt;
+	}
+
 
 
 
