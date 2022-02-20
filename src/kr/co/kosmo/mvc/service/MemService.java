@@ -17,4 +17,19 @@ public class MemService implements MemDAO{
 		ss.insert("member.joinIn",vo);
 	}
 
+	@Override
+	public int memIdchk(String id) {
+		int result = ss.selectOne("member.idchk", id);
+		return result;
+	}
+
+	@Override
+	public int login(MemVO vo) {
+		int cnt = ss.selectOne("member.login", vo);
+		return cnt;
+	}
+
+
+
+
 }

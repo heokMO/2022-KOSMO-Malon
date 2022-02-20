@@ -2,5 +2,5 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>       
     <div id="article">
-		Hello
+		<h1>¾î¼­¿À¼î</h1>
     </div>

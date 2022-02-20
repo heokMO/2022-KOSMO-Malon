@@ -8,5 +8,11 @@
 		insert into mem values (#{mem_acc_id}, #{mem_pwd}, #{mem_nick}, #{mem_email})
 	</insert>
 	
+	<select id="idchk" resultType="_int">
+		select count(*) from mem where mem_acc_id = #{mem_acc_id, jdbcType=VARCHAR}
+	</select>
 	
+	<select id="login" parameterType="memvo" resultType="_int">
+		select count(*) from mem where mem_acc_id = #{mem_acc_id, jdbcType=VARCHAR} and mem_pwd = #{mem_pwd, jdbcType=VARCHAR}
+	</select>
 </mapper>
