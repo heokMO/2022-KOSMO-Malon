@@ -28,8 +28,7 @@ public class MemService implements MemDAO{
 		int cnt = ss.selectOne("member.login", vo);
 		return cnt;
 	}
-
-
+	
 
 
 }
