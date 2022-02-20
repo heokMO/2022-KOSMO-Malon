@@ -14,10 +14,6 @@
 					<a href="/member/loginPage">로그인</a>
 					<a href="/member/joinForm">회원가입</a>
 				</c:when>
-				<c:when test="${sessionScope.sessionId != null}">
-					<a href="/member/logout" id="logout">로그아웃</a>
-					<a href="">마이페이지</a>
-				</c:when>
 			</c:choose>
 			<a href="/test" id="test">test</a>
 		</div>
